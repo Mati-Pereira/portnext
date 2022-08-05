@@ -1,0 +1,113 @@
+@use "../variables.scss";
+@use "../mixings.scss";
+
+#portifolio {
+  .link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: 700px) {
+      @media (max-width: 1000px) {
+        flex-direction: column;
+
+        .h1 {
+          display: flex;
+          font-size: 4em;
+        }
+
+        .h1-mobile {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      @include mixings.btn;
+      position: absolute;
+      right: 5rem;
+      &:hover {
+        scale: (1.1);
+      }
+
+      @media (max-width: 700px) {
+        display: flex;
+        margin-bottom: 3rem;
+        position: relative;
+        justify-content: center;
+        right: 0;
+      }
+
+      @media (min-width: 700px) {
+        @media (max-width: 1000px) {
+          display: flex;
+          margin-bottom: 3rem;
+          position: relative;
+          justify-content: center;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3rem;
+  padding: 3rem;
+
+  h1 {
+    width: 17ch;
+    line-break: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    background-clip: text;
+    color: #731022;
+    font-weight: 900;
+    box-shadow: 0.2em 0 0 #731022;
+    animation: caret 0.4s step-end infinite alternate, type 3s steps(17, end);
+  }
+  .h1-mobile {
+    display: none;
+  }
+
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+  }
+
+  @keyframes caret {
+    50% {
+      box-shadow: 0.2em 0 0 transparent;
+    }
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    .h1 {
+      display: none;
+    }
+
+    .h1-mobile {
+      display: block;
+    }
+
+    .h1-mobile:nth-child(2) {
+      width: 7ch;
+      animation: caret 0.4s step-end infinite alternate, type 2s steps(7, end);
+    }
+    .h1-mobile:nth-child(3) {
+      width: 9ch;
+      animation: caret 0.4s step-end infinite alternate, type 2s steps(9, end);
+    }
+  }
+}
