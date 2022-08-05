@@ -6,7 +6,7 @@ import Image from 'next/image';
 function SidebarEnglish() {
   return (
     <aside id="sidebar">
-      <div className='img' ><Image src={Perfil} alt='my-perfil' width={230} height={300} /></div>
+      <div className='img' ><Image className='rounded' src={Perfil} alt='my-perfil' width={230} height={300} /></div>
       <p className="title">Junior Front-End Developer</p>
       <SocialNetworkEnglish />
       <InfoContainerEnglish />
